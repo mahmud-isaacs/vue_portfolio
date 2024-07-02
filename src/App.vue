@@ -1,7 +1,7 @@
 <template>
   <NavBarComp/>
-  <FooterComp/>
   <router-view />
+  <FooterComp/>
 </template>
 
 <script>
@@ -286,12 +286,5 @@ main {
     color: #5073A4;
 }
 
-.form-label {
-    color: #CDDC39;
-    font-size: 18px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: #1A4E47;
-    border-radius: 20px;
-    width: 50%;
-}
+
 </style>

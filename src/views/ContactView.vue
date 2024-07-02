@@ -1,6 +1,37 @@
 <template>
- <h1>test</h1> 
-</template>
+    <main id="contactPage">
+      <div class="container">
+        <h1 class="text-center contactMain">Let's get in touch!</h1>
+        <form action="https://formspree.io/f/mdoqqdlv" class="row g-3" method="POST" target="_blank">
+          <div class="col-md-6 order-md-1 text-center">
+            <img src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/20240422_120313.jpg" class="img-thumbnail cont-img" alt="Contact Image" width="400" height="800">
+          </div>
+          <div class="col-md-6 order-md-2">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" name="Email" required placeholder="example@gmail.com">
+            <label for="inputName" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="inputName" name="First Name" required>
+            <label for="inputLastName" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="inputLastName" name="Last Name" required>
+            <label for="inputMessage" class="form-label">Send Us A Message</label>
+            <textarea class="form-control" name="message" placeholder="Type message here..." required></textarea>
+            <br>
+            <button class="form-control submitBtn">Submit</button>
+            <br><hr>
+            <h5 id="infoHeading">My Info:</h5>
+            <p id="infoPara">Phone: 076 499 1374</p>
+            <p id="infoPara">Email: Mahmud.isaacs03@gmail.com</p>
+            <p>
+            <img class="locationLogo" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/locationIcon.png" alt="">
+            South Africa, Cape Town, Lotus River
+            </p>
+            <hr>
+            <a href="https://github.com/mahmud-isaacs"><img class="gitHub" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/GitHubLogo.png" alt=""></a>
+          </div>
+        </form>
+      </div>
+    </main>
+  </template>
 
 <script>
 export default {
@@ -8,6 +39,123 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+#contactPage {
+  margin-top: 20px;
+  background-color: rgba(40, 54, 24, 0.8);
+}
+
+.contactMain {
+  margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 5rem;
+    color: #99cc66;
+    font-family: 'Archivo Black', sans-serif;
+    text-shadow: 2px 2px 2px #000000;
+    animation: slide 3s forwards;
+}
+
+h5 {
+    font-family: 'Archivo Black', sans-serif;
+    color: #99cc66;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+p {
+    font-family: 'Archivo Black', sans-serif;
+    color: #99cc66;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(800px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(50px);
+        opacity: 1;
+    }
+}
+
+.cont-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.submitBtn {
+  background-color: #595f39;
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Archivo Black', sans-serif;
+}
+
+.submitBtn:hover {
+  background-color: #416542;
+}
+
+#infoHeading {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#infoPara {
+  margin: 0;
+}
+
+.socialLinks a {
+  display: inline-block;
+  margin: 5px 0;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.socialLinks a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+}
+
+.socialLinks a:hover {
+  text-decoration: underline;
+}
+
+.form-label {
+    color: black;
+    font-size: 18px;
+    font-family: "Archivo Black", sans-serif;
+    background-color: #595f39;
+    border-radius: 5px;
+    border-width: 20%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.img-thumbnail {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.);
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.locationLogo {
+    width: 20px;
+    height: 20px;
+    mix-blend-mode: multiply;
+}
+
+.gitHub {
+    width: 25px;
+    height: 25px;
+    mix-blend-mode: inherit;
+}
 </style>
