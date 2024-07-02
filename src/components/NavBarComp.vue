@@ -25,7 +25,7 @@
               <router-link class="nav-link" to="/testimonials">Testimonials</router-link>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact Us</a>
+              <a class="nav-link" href="/contact">Contact Me</a>
             </li> 
           </ul>
         </div>
