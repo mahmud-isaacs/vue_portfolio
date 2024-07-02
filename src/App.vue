@@ -61,28 +61,7 @@ footer {
     text-align: center;
 }
 
-#aboutMain {
-    background-color: #325353;
-    color: #CDDC39;
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 5rem;
-    box-shadow: 2px 5px 8px  #325353;
-    animation: slideIn 4s forwards;
-    opacity: 0; 
-    animation-name: slipIn;
-}
 
-@keyframes slipIn {
-    from {
-        transform: translateX(-300px);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(4px); 
-        opacity: 1; 
-      }
-}
 
 #educationHeading {
     color: #1A4E47;

@@ -1,4 +1,6 @@
 <template>
+  <body class="container-fluid">
+    
     <main id="contactPage">
       <div class="container">
         <h1 class="text-center contactMain">Let's get in touch!</h1>
@@ -31,6 +33,7 @@
         </form>
       </div>
     </main>
+  </body>
   </template>
 
 <script>
@@ -42,8 +45,11 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
 
+body {
+  background-color: rgba(40, 54, 24, 0.8);
+}
+
 #contactPage {
-  margin-top: 20px;
   background-color: rgba(40, 54, 24, 0.8);
 }
 
