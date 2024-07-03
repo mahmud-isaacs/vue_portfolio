@@ -7,7 +7,7 @@
         </div>
         <div class="container">
           <div class="row justify-content-center">
-            <div v-for="skill in $store.state.skills" id="skill-border" class="card-group card border-9 mb-3" style="max-width: 70rem;" :key="skill.name" v-scroll-animation>
+            <div v-for="skill in $store.state.skills" id="skill-border" class="card-group card border-9 mb-3" style="max-width: 70rem;" :key="skill.name">
               <div class="card">
                 <img :src="skill.image" class="card-img-top" alt="" id="skillCards">
                 <div class="card-body">
@@ -23,7 +23,7 @@
           <h2 id="aboutMain">My Soft Skills:</h2>
         </div>
         <div class="row justify-content-center">
-          <div v-for="softSkill in $store.state.softSkills" id="skill-border" class="card-group card border-9 mb-3" style="max-width: 70rem;" :key="softSkill.name" v-scroll-animation>
+          <div v-for="softSkill in $store.state.softSkills" id="skill-border" class="card-group card border-9 mb-3" style="max-width: 70rem;" :key="softSkill.name">
             <div class="card">
               <img :src="softSkill.image" class="card-img-top" alt="" id="skillCards">
               <div class="card-body">
@@ -38,7 +38,7 @@
           <h2 id="aboutMain"><b>Education:</b></h2>
         </div>
         <div class="row">
-          <div class="col-8-1" v-for="education in $store.state.education" :key="education.placeOfInstitution" v-scroll-animation>
+          <div class="col-8-1" v-for="education in $store.state.education" :key="education.placeOfInstitution">
             <img :src="education.image" alt="" class="img-thumbnailRow">
             <h3 id="educationHeading">{{ education.year }}</h3>
             <h4 id="aboutHeading"><b>{{ education.placeOfInstitution }}</b></h4>
