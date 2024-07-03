@@ -118,59 +118,7 @@ p {
     padding-top: 5px;
 }
 
-.image-wrapper1 {
-    background-color: #5073A4;
-}
 
-.image-wrapper2 {
-    background-color: #5C88B8;
-}
-
-.image-wrapper3 {
-    background-color: #3B5E8B;
-}
-
-.image-wrapper4 {
-    background-color: #A569BD;
-}
-
-.image-wrapper5 {
-    background-color: #FFC300;
-}
-
-.carousel-item img {
-    max-width: 200px; 
-    height: auto; 
-    display: block;
-    margin: 0 auto; 
-}
-
-#testHeading {
-    text-align: center;
-    font-size: 5rem;
-    color: black;
-    box-shadow: 2px 5px 8px black;
-    max-width: 80%;
-    padding: 10px;
-    justify-content: center;
-
-}
-
-.card-title-test {
-    text-align: center;
-    font-size: 25px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.testPad {
-    padding-top: 60px;
-}
-
-.testBox {
-    align-content: center;
-    justify-content: center;
-    display: flex;
-}
 
 main {
     flex: 1;
