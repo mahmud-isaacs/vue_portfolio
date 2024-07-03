@@ -106,47 +106,13 @@ p {
     border-radius: 50%;
 }
 
-.card-link-overlay {
-    position: absolute;
-    top: 0;
-    bottom: 60px;
-    left: 0;
-    right: 0;
-    background-color: #1A4E47;
-    opacity: 0;
-    transition: opacity 1.1s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10%;
-}
 
-.custom-text {
-    color: #003333;
-}
 
-.card-link-overlay:hover {
-    opacity: 3;
-  }
 
-.card-link {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
 
-.custom-card {
-    background-color: #CDDC39;
-    border-radius: 10%;
-}
 
-.custom-card img {
-    border-radius: 10%;
-}
 
-#projectPage {
-    padding-top: 70px;
-}
+
 
 .resumePad {
     padding-top: 5px;
