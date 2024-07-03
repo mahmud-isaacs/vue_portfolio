@@ -63,35 +63,21 @@ footer {
 
 
 
-#educationHeading {
-    color: #1A4E47;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
 
-#aboutHeading {
-    color: #FF6E42;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 2rem;
-}
 
 p {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: 20px;
 }
-#skill-border {
-    border: 30px solid #003333;
-    padding: 20px;
-}
+
 
 .card-title {
     color: #325353;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.card-text {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #031e1a;
-}
+
+
 
 .row {
     display: flex;
@@ -101,17 +87,7 @@ p {
     padding-left: 20px;
 }
 
-.col-8-1 {
-    border: 10px solid #1A4E47;
-    padding: 10px;
-    text-align: center;
-}
 
-.col-8-2{
-    border: 10px solid #1A4E47;
-    padding: 10px;
-    text-align: center;
-}
 
 .pad {
     padding-top: 70px;
@@ -173,7 +149,7 @@ p {
 }
 
 .resumePad {
-    padding-top: 60px;
+    padding-top: 5px;
 }
 
 .image-wrapper1 {

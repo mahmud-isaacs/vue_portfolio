@@ -164,4 +164,8 @@ p {
     height: 25px;
     mix-blend-mode: inherit;
 }
+
+hr {
+  border: 4px solid #595f39;
+}
 </style>
