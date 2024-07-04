@@ -75,4 +75,36 @@ b {
       }
 }
 
+@media screen and (max-width: 750px) {
+  .row.pad {
+    flex-direction: column;
+  }
+
+  .col-md-4 {
+    order: 1;
+  }
+
+  .col-md-8 {
+    order: 2;
+  }
+
+  #aboutMain {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  #aboutMain {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+}
+
 </style>
