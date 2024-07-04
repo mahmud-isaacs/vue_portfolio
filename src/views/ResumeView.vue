@@ -199,4 +199,56 @@ p {
     padding: 10px;
     text-align: center;
 }
+
+@media screen and (max-width: 768px) {
+  #skillCards {
+    width: 15rem;
+  }
+
+  .img-thumbnailRow {
+    max-width: 20%;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+
+  .aboutMainContainer {
+    flex-direction: column;
+  }
+
+  #aboutMain {
+    font-size: 3rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px){
+  #skillCards {
+    width: 12rem;
+  }
+
+  .img-thumbnailRow {
+    max-width: 30%;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .aboutMainContainer {
+    flex-direction: column;
+  }
+
+  #aboutMain {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 0.875rem;
+  }
+}
 </style>

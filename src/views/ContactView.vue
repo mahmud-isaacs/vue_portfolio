@@ -1,10 +1,9 @@
 <template>
   <body class="container-fluid">
-    
     <main id="contactPage">
       <div class="container">
         <h1 class="text-center contactMain">Let's get in touch!</h1>
-        <form action="https://formspree.io/f/mdoqqdlv" class="row g-3" method="POST" target="_blank">
+        <form @submit.prevent="submitForm" class="row g-3">
           <div class="col-md-6 order-md-1 text-center">
             <img src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/20240422_120313.jpg" class="img-thumbnail cont-img" alt="Contact Image" width="400" height="800">
           </div>
@@ -34,11 +33,33 @@
       </div>
     </main>
   </body>
-  </template>
+</template>
 
 <script>
 export default {
+  methods: {
+    submitForm() {
+      const form = document.querySelector('form');
+      const formData = new FormData(form);
 
+      fetch('https://formspree.io/f/mblrjayb', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          alert('Thank you for your message!');
+          form.reset();
+        } else {
+          alert('Oops! There was a problem submitting your form');
+        }
+      }).catch(() => {
+        alert('Oops! There was a problem submitting your form');
+      });
+    }
+  }
 }
 </script>
 
@@ -58,34 +79,34 @@ body {
 }
 
 h1 {
-    font-size: 5rem;
-    color: #99cc66;
-    font-family: 'Archivo Black', sans-serif;
-    text-shadow: 2px 2px 2px #000000;
-    animation: slide 3s forwards;
+  font-size: 5rem;
+  color: #99cc66;
+  font-family: 'Archivo Black', sans-serif;
+  text-shadow: 2px 2px 2px #000000;
+  animation: slide 3s forwards;
 }
 
 h5 {
-    font-family: 'Archivo Black', sans-serif;
-    color: #99cc66;
-    text-shadow: 2px 2px 2px #000000;
+  font-family: 'Archivo Black', sans-serif;
+  color: #99cc66;
+  text-shadow: 2px 2px 2px #000000;
 }
 
 p {
-    font-family: 'Archivo Black', sans-serif;
-    color: #99cc66;
-    text-shadow: 2px 2px 2px #000000;
+  font-family: 'Archivo Black', sans-serif;
+  color: #99cc66;
+  text-shadow: 2px 2px 2px #000000;
 }
 
 @keyframes slide {
-    from {
-        transform: translateX(800px);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(50px);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(800px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(50px);
+    opacity: 1;
+  }
 }
 
 .cont-img {
@@ -133,39 +154,100 @@ p {
 }
 
 .form-label {
-    color: black;
-    font-size: 18px;
-    font-family: "Archivo Black", sans-serif;
-    background-color: #595f39;
-    border-radius: 5px;
-    border-width: 20%;
-    padding-left: 5px;
-    padding-right: 5px;
+  color: black;
+  font-size: 18px;
+  font-family: "Archivo Black", sans-serif;
+  background-color: #595f39;
+  border-radius: 5px;
+  border-width: 20%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .form-control {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .img-thumbnail {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.);
-    border-radius: 10px;
-    opacity: 0.9;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.);
+  border-radius: 10px;
+  opacity: 0.9;
 }
 
 .locationLogo {
-    width: 20px;
-    height: 20px;
-    mix-blend-mode: multiply;
+  width: 20px;
+  height: 20px;
+  mix-blend-mode: multiply;
 }
 
 .gitHub {
-    width: 25px;
-    height: 25px;
-    mix-blend-mode: inherit;
+  width: 25px;
+  height: 25px;
+  mix-blend-mode: inherit;
 }
 
 hr {
   border: 4px solid #595f39;
 }
+
+@media screen and (max-width: 750px) {
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  .contactMain {
+    font-size: 2rem;
+  }
+
+  .submitBtn {
+    font-size: 1.25rem;
+  }
+
+  .form-label {
+    font-size: 16px;
+  }
+
+  .locationLogo,
+  .gitHub {
+    width: 20px;
+    height: 20px;
+  }
+
+  .row.g-3 {
+    flex-direction: column;
+  }
+
+  .col-md-6.order-md-1.text-center,
+  .col-md-6.order-md-2 {
+    order: initial;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .contactMain {
+    font-size: 1.75rem;
+  }
+
+  .submitBtn {
+    font-size: 1rem;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .locationLogo,
+  .gitHub {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 </style>
