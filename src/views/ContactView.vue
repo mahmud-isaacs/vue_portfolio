@@ -50,7 +50,7 @@ export default {
         }
       }).then(response => {
         if (response.ok) {
-          alert('Thank you for your message!');
+          alert('Your message was submitted. Thank you!');
           form.reset();
         } else {
           alert('Oops! There was a problem submitting your form');

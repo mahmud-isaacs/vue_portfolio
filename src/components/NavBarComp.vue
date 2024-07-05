@@ -46,8 +46,8 @@
   .nav-link {
     color: #595f39;
     font-family: "Archivo Black", sans-serif;
-    font-size: 1,5rem;
-    margin-left: 8rem;
+    font-size: 1,8rem;
+    margin-left: 7.5rem;
     transition: color 0.3s ease;
   }
   
