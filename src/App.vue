@@ -35,12 +35,7 @@ footer {
     padding: 2px ;
   }
 
-.footer-content  {
-    gap: 8px;
-    padding: 8px;
-    justify-content: center;
-    align-items: center;
-}
+
 
 
 

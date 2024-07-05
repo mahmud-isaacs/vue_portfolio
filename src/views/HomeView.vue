@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Gugi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@300;400;500;600;700&family=Gugi&display=swap');
 .containerMain {
     background-image: linear-gradient(to bottom right, rgba(40, 54, 24, 0.5), rgba(40, 54, 24, 0.8)), url('https://mahmud-isaacs.github.io/portfolio_hostedImages/images/IMG_0306_Original.jpg');
     background-size: cover;
@@ -37,6 +39,7 @@ export default {
 #mainHeading {
     font-size: 5rem;
     color: #99cc66;
+    font-family: "Gugi", sans-serif;
 }
 
 #mainHeading b {
@@ -58,6 +61,7 @@ export default {
 
 #subHeading {
     color: #CDDC39;
+    font-family: "Atma", system-ui;
 }
 
 

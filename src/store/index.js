@@ -31,23 +31,22 @@ export default createStore({
   },
   actions: {
     async getAboutMe ({commit}){
-      let fetchInfo = await fetch('https://mahmud-isaacs.github.io/first_API/data/data.json')
-      let data = await fetchInfo.json()
-      let {aboutMe,projects,education,skills,softSkills,testimonials} = data
-      console.log(data);
-      commit('setAboutMe', aboutMe)
-      commit('setProjects', projects)
-      commit('setEducation', education)
-      commit('setSkills', skills)
-      commit('setSoftSkills', softSkills)
-      commit('setTestimonials', testimonials)
-    }
-  },
+    try {
+        let fetchInfo = await fetch('https://mahmud-isaacs.github.io/first_API/data/data.json')
+        let data = await fetchInfo.json()
+        let {aboutMe,projects,education,skills,softSkills,testimonials} = data
+        console.log(data);
+        commit('setAboutMe', aboutMe)
+        commit('setProjects', projects)
+        commit('setEducation', education)
+        commit('setSkills', skills)
+        commit('setSoftSkills', softSkills)
+        commit('setTestimonials', testimonials)
+      }
+  catch (error) {
+    console.log(error);
+  }}
+},
   modules: {
-  },
-  getters: {
-    getItemByIndex: (state) => (index) => {
-      return state.items[index];
-    }
   }
 })

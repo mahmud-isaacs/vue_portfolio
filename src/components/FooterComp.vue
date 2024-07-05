@@ -5,6 +5,9 @@
         <h6> &copy; Designed and Developed by <b>Mahmud Isaacs</b>|
         <span id="current-year"></span>  |All rights reserved</h6>
       </div>
+      <div class="footImg">
+        <a href="https://github.com/mahmud-isaacs"><img class="gitHub" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/GitHubLogo.png" alt=""></a>
+      </div>
     </div>
   </footer>
 </template>
@@ -49,5 +52,20 @@ export default {
 h6 {
   font-size: 1rem;
   color: #595f39;
+}
+
+.footImg {
+  width: 50px;
+  height: auto;
+  justify-content: flex-end;
+}
+
+.gitHub {
+  width: 10px;
+  height: auto;
+  justify-content: flex-end;
+  align-content: flex-end;
+  text-align: end;
+  padding-left: 25px;
 }
 </style>
