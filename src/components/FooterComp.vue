@@ -1,12 +1,12 @@
 <template>
   <footer class="fixed-footer">
     <div class="footer-content">
-      <div style="justify-content: center;">
-        <h6> &copy; Designed and Developed by <b>Mahmud Isaacs</b>|
-        <span id="current-year"></span>  |All rights reserved</h6>
+      <div class="footer-text">
+        <h6> &copy; Designed and Developed by <b>Mahmud Isaacs</b> |
+        <span id="current-year"></span> | All rights reserved</h6>
       </div>
       <div class="footImg">
-        <a href="https://github.com/mahmud-isaacs"><img class="gitHub" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/GitHubLogo.png" alt=""></a>
+        <a href="https://github.com/mahmud-isaacs"><img class="gitHub" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/GitHubLogo.png" alt="GitHub Logo"></a>
       </div>
     </div>
   </footer>
@@ -29,19 +29,25 @@ export default {
   text-align: center;
   padding: 10px 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  height: 50px; 
+  height: auto; 
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  flex-wrap: wrap; 
+}
+
+.footer-text {
+  flex: 1;
+  text-align: center;
 }
 
 .footer-content a img {
   width: 50px;
   height: auto;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
 }
 
 #current-year {
@@ -55,17 +61,53 @@ h6 {
 }
 
 .footImg {
-  width: 50px;
-  height: auto;
-  justify-content: flex-end;
+  flex: 0 0 auto; /* Prevent the image container from shrinking */
+  padding: 10px;
 }
 
 .gitHub {
-  width: 10px;
+  width: 40px;
   height: auto;
-  justify-content: flex-end;
-  align-content: flex-end;
-  text-align: end;
-  padding-left: 25px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-text, .footImg {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .gitHub {
+    width: 30px;
+  }
+}
+
+@media screen and  (max-width: 300px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-text, .footImg {
+    width: 100%;
+    padding: 5px 0;
+  }
+
+  .gitHub {
+    width: 25px;
+  }
+
+  h6 {
+    font-size: 0.8rem; 
+  }
+
+  #current-year {
+    font-size: 1rem; 
+  }
 }
 </style>

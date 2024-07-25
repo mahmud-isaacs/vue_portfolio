@@ -14,7 +14,7 @@
             <input type="text" class="form-control" id="inputName" name="First Name" required>
             <label for="inputLastName" class="form-label">Last Name</label>
             <input type="text" class="form-control" id="inputLastName" name="Last Name" required>
-            <label for="inputMessage" class="form-label">Send Us A Message</label>
+            <label for="inputMessage" class="form-label">Send Me A Message</label>
             <textarea class="form-control" name="message" placeholder="Type message here..." required></textarea>
             <br>
             <button class="form-control submitBtn">Submit</button>
