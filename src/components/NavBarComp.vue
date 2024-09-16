@@ -8,7 +8,7 @@
         <a class="navbar-brand" href="/">
           <img class="imageLogo" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/MI%20logo.jpg" alt="Logo">
         </a>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <router-link class="nav-link" to="/" active-class="active-link">Home</router-link>
           </li>
@@ -16,13 +16,10 @@
             <router-link class="nav-link" to="/about" active-class="active-link">About Me</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/resume" active-class="active-link">Resume</router-link>
+            <router-link class="nav-link" to="/education" active-class="active-link">Education & Experience</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/projects" active-class="active-link">Projects</router-link>
-          </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/testimonials" active-class="active-link">Testimonials</router-link>
           </li>
           <li class="nav-item">
             <router-link class="nav-link" to="/contact" active-class="active-link">Contact Me</router-link>
@@ -32,35 +29,45 @@
     </div>
   </nav>
 </template>
-  
-  <script>
- 
-  </script>
-  
-  <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
-  .custom-bg-green {
-    background-color: #C4C5BA; 
-  }
-  
-  .nav-link {
-    color: #595f39;
-    font-family: "Archivo Black", sans-serif;
-    font-size: 1,8rem;
-    margin-left: 7.5rem;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #ffffff; 
-  }
 
-  
-.active-link {
+<script>
+
+</script>
+
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Open+Sans:wght@400;600&display=swap');
+
+.custom-bg-green {
+  background-color: #C4C5BA; /* Soft neutral background */
+}
+
+.navbar-brand {
+  margin-right: 2rem;
+}
+
+.nav-link {
+  color: #595f39;
+  font-family: "Open Sans", sans-serif; /* Updated to Open Sans for better readability */
+  font-size: 1.1rem;
+  margin-left: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover, .active-link {
   color: #ffffff;
 }
-  
-  .imageLogo {
-    width: 40px;
-  }
-  </style>
+
+.imageLogo {
+  width: 40px;
+  height: auto;
+}
+
+.navbar-toggler {
+  border-color: #595f39;
+}
+
+.navbar-toggler-icon {
+  background-color: #595f39;
+}
+
+</style>
