@@ -1,12 +1,16 @@
 <template>
-  <footer class="fixed-footer">
-    <div class="footer-content">
+  <footer class="footer">
+    <div class="footer-container">
       <div class="footer-text">
-        <h6> &copy; Designed and Developed by <b>Mahmud Isaacs</b> |
-        <span id="current-year"></span> | All rights reserved</h6>
+        <p>&copy; <b>Mahmud Isaacs</b> - All rights reserved | <span id="current-year"></span></p>
       </div>
-      <div class="footImg">
-        <a href="https://github.com/mahmud-isaacs"><img class="gitHub" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/GitHubLogo.png" alt="GitHub Logo"></a>
+      <div class="footer-links">
+        <a href="https://github.com/mahmud-isaacs" class="footer-link" target="_blank" aria-label="GitHub">
+          <img class="footer-icon" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/GitHubLogo.png" alt="GitHub Logo">
+        </a>
+        <a href="https://www.linkedin.com/in/mahmud-isaacs-b90799329" class="footer-link" target="_blank" aria-label="LinkedIn">
+          <img class="footer-icon" src="https://mahmud-isaacs.github.io/portfolio_hostedImages/images/LinkIN.png" alt="LinkedIn Logo">
+        </a>
       </div>
     </div>
   </footer>
@@ -22,92 +26,88 @@ export default {
 </script>
 
 <style scoped>
-.fixed-footer {
-  bottom: 0;
-  width: 100%;
-  background-color: #C4C5BA; 
+.footer {
+  background-color: #C4C5BA; /* Light background for a professional look */
+  color: #343a40; /* Dark color for text */
+  padding: 20px 0;
   text-align: center;
-  padding: 10px 0;
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  height: auto; 
+  position: relative; /* Ensure it's at the bottom */
 }
 
-.footer-content {
+.footer-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .footer-text {
   flex: 1;
-  text-align: center;
+  font-size: 1rem; /* Slightly larger font for readability */
 }
 
-.footer-content a img {
-  width: 50px;
+.footer-links {
+  display: flex;
+  gap: 20px; /* Increased gap for better spacing */
+}
+
+.footer-icon {
+  width: 40px; /* Adjusted size for better visibility */
   height: auto;
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-#current-year {
-  font-size: 1.2rem;
-  color: #595f39;
+.footer-icon:hover {
+  transform: scale(1.15); /* Increased scale for more noticeable hover effect */
+  opacity: 0.8;
 }
 
-h6 {
-  font-size: 1rem;
-  color: #595f39;
+.footer-link {
+  color: inherit; /* Ensure no underline or color changes */
+  text-decoration: none;
 }
 
-.footImg {
-  flex: 0 0 auto; /* Prevent the image container from shrinking */
-  padding: 10px;
+@media (max-width: 1200px) {
+  .footer-container {
+    padding: 0 15px; /* Reduced padding for medium screens */
+  }
+
+  .footer-links {
+    gap: 15px; /* Adjusted gap for medium screens */
+  }
 }
 
-.gitHub {
-  width: 40px;
-  height: auto;
-}
-
-
-@media screen and (max-width: 600px) {
-  .footer-content {
+@media (max-width: 768px) {
+  .footer-container {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
   }
 
-  .footer-text, .footImg {
-    width: 100%;
-    padding: 5px 0;
+  .footer-links {
+    margin-top: 15px; /* Adjusted margin for mobile screens */
+    gap: 20px; /* Increased gap for mobile screens */
   }
 
-  .gitHub {
-    width: 30px;
+  .footer-icon {
+    width: 35px; /* Slightly smaller icons for mobile */
+  }
+
+  .footer-text {
+    font-size: 0.9rem; /* Slightly smaller font for mobile */
   }
 }
 
-@media screen and  (max-width: 300px) {
-  .footer-content {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 576px) {
+  .footer-icon {
+    width: 30px; /* Further reduced icon size for very small screens */
   }
 
-  .footer-text, .footImg {
-    width: 100%;
-    padding: 5px 0;
-  }
-
-  .gitHub {
-    width: 25px;
-  }
-
-  h6 {
-    font-size: 0.8rem; 
-  }
-
-  #current-year {
-    font-size: 1rem; 
+  .footer-text {
+    font-size: 0.8rem; /* Further reduced font size for very small screens */
   }
 }
 </style>
