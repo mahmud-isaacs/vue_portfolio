@@ -1,73 +1,48 @@
 <template>
-  <body class="container-fluid"> 
-    <main>
-      <div class="resumePad">
-        <div class="aboutMainContainer">
-          <h2 id="aboutMain"><b>My Skills:</b></h2>
-        </div>
-        <div class="container">
-          <div class="row justify-content-center">
-            <div v-for="skill in $store.state.skills" id="skill-border" class="card-group card border-9 mb-3" style="max-width: 70rem;" :key="skill.name">
-              <div class="card">
-                <img :src="skill.image" class="card-img-top" alt="" id="skillCards">
-                <div class="card-body">
-                  <h5 class="card-title">{{skill.name}}</h5>
-                  <p class="card-text">{{skill.level}}</p>
+  <body class="container-fluid">
+    <div>
+      <main>
+        <div class="resumePad">
+          <div class="aboutMainContainer">
+            <h2 id="aboutMain"><b>Education:</b></h2>
+          </div>
+          <div class="row">
+            <div class="col-md-12" v-for="education in $store.state.education" :key="education.placeOfInstitution">
+              <div class="education-card">
+                <img :src="education.image" alt="" class="img-thumbnailRow">
+                <div class="education-details">
+                  <h3 id="educationHeading">{{ education.year }}</h3>
+                  <h4 id="aboutHeading"><b>{{ education.placeOfInstitution }}</b></h4>
+                  <p>{{ education.description }}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="aboutMainContainer">
-          <h2 id="aboutMain">My Soft Skills:</h2>
-        </div>
-        <div class="row justify-content-center">
-          <div v-for="softSkill in $store.state.softSkills" id="skill-border" class="card-group card border-9 mb-3" style="max-width: 70rem;" :key="softSkill.name">
-            <div class="card">
-              <img :src="softSkill.image" class="card-img-top" alt="" id="skillCards">
-              <div class="card-body">
-                <h5 class="card-title">{{softSkill.name}}</h5>
-                <p class="card-text">{{softSkill.description}}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="aboutMainContainer">
-          <h2 id="aboutMain"><b>Education:</b></h2>
-        </div>
-        <div class="row">
-          <div class="col-8-1" v-for="education in $store.state.education" :key="education.placeOfInstitution">
-            <img :src="education.image" alt="" class="img-thumbnailRow">
-            <h3 id="educationHeading">{{ education.year }}</h3>
-            <h4 id="aboutHeading"><b>{{ education.placeOfInstitution }}</b></h4>
-            <p>{{education.description}}</p>
-          </div>
-        </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </body>
 </template>
 
 <script>
 export default {
-  computed :{
-    getAboutMe(){
-      return this.$store.dispatch('getAboutMe')
+  computed: {
+    getEducation() {
+      return this.$store.dispatch('getEducation');
     }
   },
-  mounted(){
-    this.getAboutMe
-  },
+  mounted() {
+    this.getEducation;
+  }
 }
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 body {
   background-color: rgba(40, 54, 24, 0.8);
+  font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -75,150 +50,113 @@ main {
 }
 
 p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: whitesmoke;
-  font-family: 'Archivo Black', sans-serif;
-}
-
-
-
-#skillCards {
-  width: 20rem;
-  align-self: center;
-
-}
-
-.img-thumbnailRow {
-    max-width: 10%;
-    border-radius: 30%;
-    border-color: #031e1a;
-    box-shadow: 2px 5px 6px  green;
-    transition: transform 1500ms;
-}
-
-.img-thumbnailRow:hover {
-    transform: rotate(360deg);
-    border-radius: 50%;
-}
-
-
-#skill-border {
-    border: 20px solid #C4C5BA;
-    padding: 20px;
-}
-
-.card-title {
-    color: #99cc66;
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 2rem;
-    text-align: center;
-    background-color: #1A4E47;
-    text-shadow: 1px 1px 2px black;
-}
-
-.card-text {
-    font-family: 'Archivo Black', sans-serif;
-    color: black;
-}
-
-.row {
-    display: flex;
-    justify-content: center;
-    padding-right: 20px;
-    padding-bottom: 20px;
-    padding-left: 20px;
-}
-
-.col-8-1 {
-    border: 10px solid #1A4E47;
-    padding: 10px;
-    text-align: center;
-}
-
-.col-8-2{
-    border: 10px solid #1A4E47;
-    padding: 10px;
-    text-align: center;
-}
-
-.pad {
-    padding-top: 20px;
+  margin: 0; /* Remove default margin */
 }
 
 .aboutMainContainer {
   display: flex;
   justify-content: center;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 #aboutMain {
-    background-color: #C4C5BA;
-    color: rgb(90, 169, 90);
-    text-align: center;
-    font-family: "Bebas Neue", sans-serif;
-    font-size: 5rem;
-    box-shadow: 2px 5px 8px  #325353;
-    animation: slideIn 4s forwards;
-    opacity: 0; 
-    animation-name: slipIn;
-    width: auto;
-    display: inline-block;
-    padding: 0.5rem 1rem;
-}
-
-@keyframes slipIn {
-    from {
-        transform: translateX(-300px);
-        opacity: 0;
-      }
-      to {
-        transform: translateX(4px); 
-        opacity: 1; 
-      }
+  color: #99cc66;
+  font-size: 3rem;
+  background-color: rgba(90, 169, 90, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #99cc66;
+  animation: fadeIn 2s forwards;
+  opacity: 0;
+  text-align: center;
+  width: 100%; /* Full width for responsiveness */
+  max-width: 80rem; /* Increased max-width for larger screens */
 }
 
 #educationHeading {
-    color: #C4C5BA;
-    font-family: 'Archivo Black', sans-serif;
+  color: #C4C5BA;
+  font-size: 1.8rem;
+  margin-top: 10px;
 }
 
 #aboutHeading {
-    color: rgb(90, 169, 90);
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 2rem;
+  color: #5AA95A;
+  font-size: 1.6rem;
+  margin-bottom: 10px; /* Adjusted margin */
 }
 
-.col-8-1 {
-    border: 10px solid #C4C5BA;
-    padding: 10px;
-    text-align: center;
+.education-card {
+  border: 2px solid #C4C5BA;
+  padding: 20px;
+  background-color: rgba(90, 169, 90, 0.1);
+  width: 100%;
+  max-width: 1000px; /* Wider cards */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto; /* Center align card and add vertical spacing */
+  text-align: center;
 }
 
-.col-8-2{
-    border: 10px solid #C4C5BA;
-    padding: 10px;
-    text-align: center;
+.img-thumbnailRow {
+  width: 100%;
+  max-width: 200px; /* Increased max-width for wider cards */
+  border-radius: 10%;
+  border: 2px solid #99cc66;
+  box-shadow: 2px 4px 6px green;
+  transition: transform 0.6s ease-in-out;
+  margin-bottom: 15px;
 }
 
+.img-thumbnailRow:hover {
+  transform: rotate(360deg);
+  border-radius: 50%;
+}
+
+.education-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Ensure the row aligns items properly and maintains spacing */
+.row {
+  display: flex;
+  flex-direction: column; /* Stack cards vertically */
+  align-items: center; /* Center align cards horizontally */
+  gap: 20px; /* Spacing between cards */
+  margin: 0 auto; /* Center the row horizontally */
+}
+
+/* Fade-in animation for the header */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive styling for medium screens */
 @media screen and (max-width: 768px) {
-  #skillCards {
-    width: 15rem;
+  #aboutMain {
+    font-size: 2.5rem;
   }
 
   .img-thumbnailRow {
-    max-width: 20%;
+    max-width: 150px; /* Adjusted max-width */
   }
 
-  .card-title {
-    font-size: 1.5rem;
-  }
-
-  .aboutMainContainer {
-    flex-direction: column;
-  }
-
-  #aboutMain {
-    font-size: 3rem;
+  .education-card {
+    max-width: 700px; /* Adjust for medium screens */
   }
 
   p {
@@ -226,29 +164,22 @@ p {
   }
 }
 
-@media screen and (max-width: 550px){
-  #skillCards {
-    width: 12rem;
+/* Responsive styling for smaller screens */
+@media screen and (max-width: 550px) {
+  #aboutMain {
+    font-size: 2rem;
   }
 
   .img-thumbnailRow {
-    max-width: 30%;
+    max-width: 120px; /* Adjusted max-width */
   }
 
-  .card-title {
-    font-size: 1.25rem;
-  }
-
-  .aboutMainContainer {
-    flex-direction: column;
-  }
-
-  #aboutMain {
-    font-size: 2.5rem;
+  .education-card {
+    max-width: 90%; /* Adjust for small screens */
   }
 
   p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
   }
 }
 </style>
