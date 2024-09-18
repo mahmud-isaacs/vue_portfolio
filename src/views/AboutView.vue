@@ -72,10 +72,13 @@ export default {
 body {
   background-color: rgba(40, 54, 24, 0.8);
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 main {
   background-color: rgba(40, 54, 24, 0.8);
+  padding: 20px;
 }
 
 p {
@@ -88,6 +91,7 @@ p {
   border: 1px solid #C4C5BA;
   padding: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .about-section {
@@ -105,7 +109,7 @@ p {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#aboutMain {
+#aboutMain, #aboutSub {
   color: #99cc66;
   font-family: 'Roboto', sans-serif;
   font-size: 3rem;
@@ -117,29 +121,8 @@ p {
   animation: fadeIn 2s forwards;
   opacity: 0;
   text-align: center;
-  width: 100%;
   max-width: 60rem;
-}
-
-#aboutSub {
-  color: #99cc66;
-  font-family: 'Roboto', sans-serif;
-  font-size: 3rem;
-  background-color: rgba(90, 169, 90, 0.1);
-  padding: 20px;
-  margin-bottom: 60px;
-  border-radius: 10px;
-  border: 2px solid #99cc66;
-  animation: fadeIn 2s forwards;
-  opacity: 0;
-  text-align: center;
-  width: 100%;
-  max-width: 60rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: 0 auto;
-  z-index: 1;
 }
 
 .quote-text {
@@ -154,8 +137,7 @@ p {
   height: 100%;
   position: relative;
   max-width: 90%;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
 .skill-card {
@@ -180,9 +162,11 @@ p {
 }
 
 .soft-skill-img {
-  height: 300px; 
-  width: 25rem;
-  object-fit: initial;
+  width: 100%;  /* Responsive width */
+  height: auto; /* Adjust height automatically */
+  object-fit: cover; /* Make sure the image fills the container properly */
+  max-width: 25rem; /* Limit maximum width for large screens */
+  border-bottom: 2px solid #99cc66;
 }
 
 .card-body {
@@ -217,10 +201,7 @@ p {
   }
 }
 
-#aboutMain {
-  animation: fadeIn 2s forwards;
-}
-
+/* Responsive Adjustments */
 @media screen and (max-width: 768px) {
   #aboutMain, #aboutSub {
     font-size: 2.5rem;
@@ -232,14 +213,20 @@ p {
 
   .about-section {
     flex-direction: column;
+    text-align: center;
   }
 
   .about-img {
     max-width: 80%;
+    margin-bottom: 20px;
   }
 
   .card-img-top {
     height: auto;
+  }
+
+  .soft-skill-img {
+    max-width: 18rem; /* Smaller images for tablet screens */
   }
 }
 
@@ -258,6 +245,15 @@ p {
 
   .card-img-top {
     height: 120px;
+  }
+
+  .soft-skill-img {
+    max-width: 100%; 
+  }
+
+  .card {
+    max-width: 100%;
+    margin: 10px auto;
   }
 }
 </style>
