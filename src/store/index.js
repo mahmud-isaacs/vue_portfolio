@@ -7,7 +7,7 @@ export default createStore({
     education:null,
     skills:null,
     softSkills:null,
-    testimonials:null
+    experience:null
   },
   mutations: {
     setAboutMe(state,payload){
@@ -25,8 +25,8 @@ export default createStore({
     setSoftSkills(state, payload){
       state.softSkills = payload
     },
-     setTestimonials(state, payload){
-       state.testimonials = payload
+     setExperience(state, payload){
+       state.experience = payload
     }
   },
   actions: {
@@ -34,14 +34,14 @@ export default createStore({
     try {
         let fetchInfo = await fetch('https://mahmud-isaacs.github.io/first_API/data/data.json')
         let data = await fetchInfo.json()
-        let {aboutMe,projects,education,skills,softSkills,testimonials} = data
+        let {aboutMe,projects,education,skills,softSkills,experience} = data
         console.log(data);
         commit('setAboutMe', aboutMe)
         commit('setProjects', projects)
         commit('setEducation', education)
         commit('setSkills', skills)
         commit('setSoftSkills', softSkills)
-        commit('setTestimonials', testimonials)
+        commit('setExperience', experience)
       }
   catch (error) {
     console.log(error);
