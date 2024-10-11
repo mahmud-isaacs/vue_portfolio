@@ -3,6 +3,24 @@
     <div>
       <main>
         <div class="resumePad">
+          <!-- Experience Section -->
+          <div class="aboutMainContainer">
+            <h2 id="aboutMain"><b>Experience:</b></h2>
+          </div>
+          <div class="row">
+            <div class="col-md-12" v-for="experience in $store.state.experience" :key="experience.placeOfInstitution">
+              <div class="experience-card">
+                <img :src="experience.image" alt="" class="img-thumbnailRow">
+                <div class="experience-details">
+                  <h3 id="experienceHeading">{{ experience.year }}</h3>
+                  <h4 id="aboutHeading"><b>{{ experience.placeOfInstitution }}</b></h4>
+                  <p>{{ experience.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Section -->
           <div class="aboutMainContainer">
             <h2 id="aboutMain"><b>Education:</b></h2>
           </div>
@@ -27,11 +45,15 @@
 <script>
 export default {
   computed: {
+    getExperience() {
+      return this.$store.dispatch('getExperience');
+    },
     getEducation() {
       return this.$store.dispatch('getEducation');
     }
   },
   mounted() {
+    this.getExperience;
     this.getEducation;
   }
 }
@@ -77,6 +99,7 @@ p {
   max-width: 80rem; /* Increased max-width for larger screens */
 }
 
+#experienceHeading,
 #educationHeading {
   color: #C4C5BA;
   font-size: 1.8rem;
@@ -89,6 +112,7 @@ p {
   margin-bottom: 10px; /* Adjusted margin */
 }
 
+.experience-card,
 .education-card {
   border: 2px solid #C4C5BA;
   padding: 20px;
@@ -118,6 +142,7 @@ p {
   border-radius: 50%;
 }
 
+.experience-details,
 .education-details {
   display: flex;
   flex-direction: column;
@@ -155,6 +180,7 @@ p {
     max-width: 150px; /* Adjusted max-width */
   }
 
+  .experience-card,
   .education-card {
     max-width: 700px; /* Adjust for medium screens */
   }
@@ -174,6 +200,7 @@ p {
     max-width: 120px; /* Adjusted max-width */
   }
 
+  .experience-card,
   .education-card {
     max-width: 90%; /* Adjust for small screens */
   }

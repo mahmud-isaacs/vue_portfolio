@@ -10,42 +10,32 @@ const routes = [
   {
     path: '/about',
     name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    // Assign a unique chunk name for the about page
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
     path: '/education',
     name: 'education',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/EducationView.vue')
+    // Use a unique chunk name for the education page
+    component: () => import(/* webpackChunkName: "education" */ '../views/EducationView.vue')
   },
   {
     path: '/projects',
     name: 'projects',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ProjectsView.vue')
+    // Use a unique chunk name for the projects page
+    component: () => import(/* webpackChunkName: "projects" */ '../views/ProjectsView.vue')
   },
   {
     path: '/testimonials',
     name: 'testimonials',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/TestimonialsView.vue')
+    // Use a unique chunk name for the testimonials page
+    component: () => import(/* webpackChunkName: "testimonials" */ '../views/TestimonialsView.vue')
   },
   {
     path: '/contact',
     name: 'contact',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/ContactView.vue')
+    // Use a unique chunk name for the contact page
+    component: () => import(/* webpackChunkName: "contact" */ '../views/ContactView.vue')
   }
 ]
 
